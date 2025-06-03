@@ -3,7 +3,7 @@ import Root from "./rootLayout/Root";
 import Home from "./pages/home/Home";
 import ErrorPage from "./pages/errorPage/ErrorPage";
 
-const router = createBrowserRouter([
+const routes = createBrowserRouter([
   {
     path: "/",
     errorElement: <ErrorPage></ErrorPage>,
@@ -17,4 +17,4 @@ const router = createBrowserRouter([
   },
 ]);
 
-export default router;
+export default routes;
