@@ -1,8 +1,9 @@
 import { Link } from "react-router";
 import useAuth from "../../hooks/useAuth";
+import Swal from "sweetalert2";
 
 const Register = () => {
-  const { signUpWithEmail } = useAuth();
+  const { signUpWithEmail, updateUserProfile } = useAuth();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -11,11 +12,30 @@ const Register = () => {
       formValue.entries()
     );
     signUpWithEmail(email, password)
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Successfully Registerd",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        updateUserProfile({ displayName: name, photoURL: photourl })
+          .then(() => {})
+          .catch(() => {
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: "Something went wrong!",
+            });
+          });
       })
-      .catch((error) => {
-        console.log(error.code, error.message);
+      .catch(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        });
       });
     e.target.reset();
   };
