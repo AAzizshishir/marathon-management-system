@@ -4,6 +4,11 @@ import Home from "./pages/home/Home";
 import ErrorPage from "./pages/errorPage/ErrorPage";
 import Register from "./pages/register/Register";
 import Login from "./pages/login/Login";
+import Dashboard from "./pages/dashboard/Dashboard";
+import AddMarathon from "./pages/dashboard/addmarathon/AddMarathon";
+import MyMarathonList from "./pages/dashboard/mymarathonlist/MyMarathonList";
+import MyApplyList from "./pages/dashboard/myapplylist/MyApplyList";
+// import DashboardLayout from "./dashboardLayout/DashboardLayout";
 
 const routes = createBrowserRouter([
   {
@@ -22,6 +27,24 @@ const routes = createBrowserRouter([
       {
         path: "login",
         Component: Login,
+      },
+      {
+        path: "dashboard",
+        Component: Dashboard,
+        children: [
+          {
+            path: "addmarathon",
+            Component: AddMarathon,
+          },
+          {
+            path: "marathonlist",
+            Component: MyMarathonList,
+          },
+          {
+            path: "applylist",
+            Component: MyApplyList,
+          },
+        ],
       },
     ],
   },
