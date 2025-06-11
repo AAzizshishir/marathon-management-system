@@ -9,6 +9,7 @@ import AddMarathon from "./pages/dashboard/addmarathon/AddMarathon";
 import MyMarathonList from "./pages/dashboard/mymarathonlist/MyMarathonList";
 import MyApplyList from "./pages/dashboard/myapplylist/MyApplyList";
 import Marathon from "./pages/marathon/Marathon";
+import MarathonDetails from "./pages/marathonDetails/MarathonDetails";
 // import DashboardLayout from "./dashboardLayout/DashboardLayout";
 
 const routes = createBrowserRouter([
@@ -23,7 +24,13 @@ const routes = createBrowserRouter([
       },
       {
         path: "marathon",
+        hydrateFallbackElement: <div>Data are coming...</div>,
+        loader: () => fetch("http://localhost:3000/allMarathons"),
         Component: Marathon,
+      },
+      {
+        path: "marathonDetails/:id",
+        Component: MarathonDetails,
       },
       {
         path: "register",

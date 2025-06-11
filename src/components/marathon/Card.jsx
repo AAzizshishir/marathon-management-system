@@ -1,6 +1,14 @@
+import { Link } from "react-router";
+
 const Card = ({ marathonData }) => {
-  const { image, title, location, startRegistration, endRegistration } =
-    marathonData;
+  const {
+    image,
+    title,
+    location,
+    startRegistrationDate,
+    endRegistrationDate,
+    _id,
+  } = marathonData;
   return (
     <div className="max-w-xs rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
       <img
@@ -14,15 +22,17 @@ const Card = ({ marathonData }) => {
           <p className="dark:text-gray-800">{location}</p>
           <div>
             <h2>Registration Dates</h2>
-            {startRegistration} to {endRegistration}
+            {startRegistrationDate} to {endRegistrationDate}
           </div>
         </div>
-        <button
-          type="button"
-          className="flex items-center justify-center cursor-pointer w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50"
-        >
-          View Details
-        </button>
+        <Link to={`marathonDetails/${_id}`}>
+          <button
+            type="button"
+            className="flex items-center justify-center cursor-pointer w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50"
+          >
+            View Details
+          </button>
+        </Link>
       </div>
     </div>
   );

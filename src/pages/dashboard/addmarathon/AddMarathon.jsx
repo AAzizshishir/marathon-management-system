@@ -48,7 +48,7 @@ const AddMarathon = () => {
                 <br />
                 <DatePicker
                   selected={regiStart}
-                  name="startRegistration"
+                  name="startRegistrationDate"
                   onChange={(date) => setRegiStart(date)}
                   className="w-full rounded-md px-2 py-0.5 border border-gray-500 my-2"
                 />
@@ -58,7 +58,7 @@ const AddMarathon = () => {
                 <br />
                 <DatePicker
                   selected={regiEnd}
-                  name="endRegistration"
+                  name="endRegistrationDate"
                   onChange={(date) => setRegiEnd(date)}
                   className="w-full rounded-md px-2 py-0.5 border border-gray-500 my-2"
                 />
@@ -68,7 +68,7 @@ const AddMarathon = () => {
                 <br />
                 <DatePicker
                   selected={marathonStart}
-                  name="marathonStart"
+                  name="marathonStartDate"
                   onChange={(date) => setMarathonStart(date)}
                   className="w-full rounded-md px-2 py-0.5 border border-gray-500 my-2"
                 />
