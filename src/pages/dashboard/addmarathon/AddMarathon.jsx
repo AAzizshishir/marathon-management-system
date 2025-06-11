@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -12,8 +13,17 @@ const AddMarathon = () => {
     e.preventDefault();
     const formValue = new FormData(e.target);
     const formObj = Object.fromEntries(formValue.entries());
-    console.log(formObj);
+
+    axios
+      .post("http://localhost:3000/marathons", formObj)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .then((error) => {
+        console.log(error);
+      });
   };
+
   return (
     <section className="p-6 dark:bg-gray-100 dark:text-gray-900">
       <form
@@ -125,6 +135,7 @@ const AddMarathon = () => {
                 name="registrationCount"
                 id=""
                 placeholder="0"
+                value={0}
                 className="w-full rounded-md px-2 py-0.5 border border-gray-500"
               />
             </div>

@@ -8,6 +8,7 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import AddMarathon from "./pages/dashboard/addmarathon/AddMarathon";
 import MyMarathonList from "./pages/dashboard/mymarathonlist/MyMarathonList";
 import MyApplyList from "./pages/dashboard/myapplylist/MyApplyList";
+import Marathon from "./pages/marathon/Marathon";
 // import DashboardLayout from "./dashboardLayout/DashboardLayout";
 
 const routes = createBrowserRouter([
@@ -19,6 +20,10 @@ const routes = createBrowserRouter([
       {
         index: true,
         Component: Home,
+      },
+      {
+        path: "marathon",
+        Component: Marathon,
       },
       {
         path: "register",
