@@ -10,6 +10,8 @@ import MyMarathonList from "./pages/dashboard/mymarathonlist/MyMarathonList";
 import MyApplyList from "./pages/dashboard/myapplylist/MyApplyList";
 import Marathon from "./pages/marathon/Marathon";
 import MarathonDetails from "./pages/marathonDetails/MarathonDetails";
+import PrivateRoutes from "./privateRoutes/PrivateRoutes";
+import Loader from "./components/loader/Loader";
 // import DashboardLayout from "./dashboardLayout/DashboardLayout";
 
 const routes = createBrowserRouter([
@@ -24,13 +26,23 @@ const routes = createBrowserRouter([
       },
       {
         path: "marathon",
-        hydrateFallbackElement: <div>Data are coming...</div>,
+        hydrateFallbackElement: <Loader></Loader>,
         loader: () => fetch("http://localhost:3000/allMarathons"),
-        Component: Marathon,
+        // Component: Marathon,
+        element: (
+          <PrivateRoutes>
+            <Marathon></Marathon>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "marathonDetails/:id",
-        Component: MarathonDetails,
+        // Component: MarathonDetails,
+        element: (
+          <PrivateRoutes>
+            <MarathonDetails></MarathonDetails>
+          </PrivateRoutes>
+        ),
       },
       {
         path: "register",
@@ -42,19 +54,39 @@ const routes = createBrowserRouter([
       },
       {
         path: "dashboard",
-        Component: Dashboard,
+        // Component: Dashboard,
+        element: (
+          <PrivateRoutes>
+            <Dashboard></Dashboard>
+          </PrivateRoutes>
+        ),
         children: [
           {
             path: "addmarathon",
-            Component: AddMarathon,
+            // Component: AddMarathon,
+            element: (
+              <PrivateRoutes>
+                <AddMarathon></AddMarathon>
+              </PrivateRoutes>
+            ),
           },
           {
             path: "marathonlist",
-            Component: MyMarathonList,
+            // Component: MyMarathonList,
+            element: (
+              <PrivateRoutes>
+                <MyMarathonList></MyMarathonList>
+              </PrivateRoutes>
+            ),
           },
           {
             path: "applylist",
-            Component: MyApplyList,
+            // Component: MyApplyList,
+            element: (
+              <PrivateRoutes>
+                <MyApplyList></MyApplyList>
+              </PrivateRoutes>
+            ),
           },
         ],
       },

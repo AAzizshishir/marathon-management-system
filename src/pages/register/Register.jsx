@@ -1,9 +1,10 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
 
 const Register = () => {
-  const { signUpWithEmail, updateUserProfile } = useAuth();
+  const { signUpWithEmail, updateUserProfile, googleSignIn } = useAuth();
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -20,6 +21,7 @@ const Register = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+        navigate("/");
         updateUserProfile({ displayName: name, photoURL: photourl })
           .then(() => {})
           .catch(() => {
@@ -38,6 +40,27 @@ const Register = () => {
         });
       });
     e.target.reset();
+  };
+
+  const handleGoogleSignUp = () => {
+    googleSignIn()
+      .then(() => {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Successfully Registerd",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        navigate("/");
+      })
+      .catch(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+        });
+      });
   };
   return (
     <div className="card bg-base-100 w-full mx-auto my-20 max-w-sm shrink-0 shadow-2xl">
@@ -69,6 +92,10 @@ const Register = () => {
           />
           <button type="submit" className="btn btn-neutral mt-4">
             Register
+          </button>
+          <div className="divider">OR</div>
+          <button onClick={handleGoogleSignUp} className="btn btn-neutral">
+            Sign Up with google
           </button>
           <p>
             Already have an account? <Link to={"/login"}>Please login</Link>
