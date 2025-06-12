@@ -12,7 +12,6 @@ import Marathon from "./pages/marathon/Marathon";
 import MarathonDetails from "./pages/marathonDetails/MarathonDetails";
 import PrivateRoutes from "./privateRoutes/PrivateRoutes";
 import Loader from "./components/loader/Loader";
-// import DashboardLayout from "./dashboardLayout/DashboardLayout";
 
 const routes = createBrowserRouter([
   {
@@ -28,7 +27,6 @@ const routes = createBrowserRouter([
         path: "marathon",
         hydrateFallbackElement: <Loader></Loader>,
         loader: () => fetch("http://localhost:3000/allMarathons"),
-        // Component: Marathon,
         element: (
           <PrivateRoutes>
             <Marathon></Marathon>
@@ -36,8 +34,10 @@ const routes = createBrowserRouter([
         ),
       },
       {
-        path: "marathonDetails/:id",
-        // Component: MarathonDetails,
+        path: "/marathonDetails/:id",
+        hydrateFallbackElement: <Loader></Loader>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/allMarathons/${params.id}`),
         element: (
           <PrivateRoutes>
             <MarathonDetails></MarathonDetails>
@@ -54,7 +54,6 @@ const routes = createBrowserRouter([
       },
       {
         path: "dashboard",
-        // Component: Dashboard,
         element: (
           <PrivateRoutes>
             <Dashboard></Dashboard>
@@ -63,7 +62,6 @@ const routes = createBrowserRouter([
         children: [
           {
             path: "addmarathon",
-            // Component: AddMarathon,
             element: (
               <PrivateRoutes>
                 <AddMarathon></AddMarathon>
@@ -72,7 +70,6 @@ const routes = createBrowserRouter([
           },
           {
             path: "marathonlist",
-            // Component: MyMarathonList,
             element: (
               <PrivateRoutes>
                 <MyMarathonList></MyMarathonList>
@@ -81,7 +78,6 @@ const routes = createBrowserRouter([
           },
           {
             path: "applylist",
-            // Component: MyApplyList,
             element: (
               <PrivateRoutes>
                 <MyApplyList></MyApplyList>

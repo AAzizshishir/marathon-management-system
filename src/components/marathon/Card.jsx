@@ -25,7 +25,7 @@ const Card = ({ marathonData }) => {
             {startRegistrationDate} to {endRegistrationDate}
           </div>
         </div>
-        <Link to={`marathonDetails/${_id}`}>
+        <Link to={`/marathonDetails/${_id}`}>
           <button
             type="button"
             className="flex items-center justify-center cursor-pointer w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50"

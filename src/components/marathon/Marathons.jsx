@@ -1,7 +1,7 @@
 import { use } from "react";
 import Card from "./Card";
 
-const Marathons = ({ marathonDataPromise }) => {
+const MarathonSection = ({ marathonDataPromise }) => {
   const marathonsData = use(marathonDataPromise);
   console.log(marathonsData);
   return (
@@ -16,4 +16,4 @@ const Marathons = ({ marathonDataPromise }) => {
   );
 };
 
-export default Marathons;
+export default MarathonSection;
