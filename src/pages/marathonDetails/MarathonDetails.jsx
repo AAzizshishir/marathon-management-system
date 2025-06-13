@@ -4,6 +4,7 @@ import { Link, useLoaderData } from "react-router";
 const MarathonDetails = () => {
   // const [enable, setEnable] = useState(false);
   const {
+    _id,
     title,
     location,
     distance,
@@ -36,7 +37,7 @@ const MarathonDetails = () => {
           <p>Marathon Start Date:{marathonStartDate}</p>
           <h3>registrationCount:{registrationCount}</h3>
           {/* {enable && } */}
-          <Link to={"/marathonRegister"}>
+          <Link to={`/marathonRegistration/${_id}`}>
             <button className="btn">Register</button>
           </Link>
         </div>

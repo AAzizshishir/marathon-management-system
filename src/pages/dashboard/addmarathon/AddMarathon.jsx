@@ -132,7 +132,7 @@ const AddMarathon = () => {
               <input
                 readOnly
                 type="text"
-                name="registrationCount"
+                name="totalRegistrationCount"
                 id=""
                 placeholder="0"
                 value={0}
