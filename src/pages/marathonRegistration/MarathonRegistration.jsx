@@ -2,6 +2,7 @@
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import { useLoaderData } from "react-router";
+import Swal from "sweetalert2";
 
 const MarathonRegistration = () => {
   const { user } = useAuth();
@@ -17,8 +18,15 @@ const MarathonRegistration = () => {
       .post("http://localhost:3000/registration", registrationDataObj)
       .then((res) => {
         console.log(res.data);
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Registration Successfull",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       })
-      .then((error) => {
+      .catch((error) => {
         console.log(error);
       });
   };
