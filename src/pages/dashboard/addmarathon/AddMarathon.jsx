@@ -2,8 +2,11 @@ import axios from "axios";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import useAuth from "../../../hooks/useAuth";
+import Swal from "sweetalert2";
 
 const AddMarathon = () => {
+  const { user } = useAuth();
   const [regiStart, setRegiStart] = useState(new Date());
   const [regiEnd, setRegiEnd] = useState(new Date());
   const [marathonStart, setMarathonStart] = useState(new Date());
@@ -13,13 +16,21 @@ const AddMarathon = () => {
     e.preventDefault();
     const formValue = new FormData(e.target);
     const formObj = Object.fromEntries(formValue.entries());
+    formObj.email = user.email;
 
     axios
       .post("http://localhost:3000/marathons", formObj)
       .then((res) => {
         console.log(res.data);
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Marathon Added Successfull",
+          showConfirmButton: false,
+          timer: 1500,
+        });
       })
-      .then((error) => {
+      .catch((error) => {
         console.log(error);
       });
   };

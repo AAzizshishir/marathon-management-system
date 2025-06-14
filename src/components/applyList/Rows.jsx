@@ -1,7 +1,4 @@
-// import { useState } from "react";
-
-import axios from "axios";
-import Swal from "sweetalert2";
+import { handleDelete, handleEditData } from "../../utils/Utils";
 
 const Rows = ({ el, index, registrationData, setRegistrationData }) => {
   const {
@@ -14,69 +11,7 @@ const Rows = ({ el, index, registrationData, setRegistrationData }) => {
     additionalInfo,
     marathonStartDate,
   } = el;
-  const handleEditData = (e, id) => {
-    e.preventDefault();
-    const formValue = new FormData(e.target);
-    const formValueObj = Object.fromEntries(formValue.entries());
-    console.log(formValueObj);
-    axios
-      .put(`http://localhost:3000/registration/${id}`, formValueObj)
-      .then((res) => {
-        console.log(res.data);
-        if (res.data.modifiedCount) {
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Successfully Updated",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-        }
-        const updatedData = registrationData.map((item) =>
-          item._id === id ? { ...item, ...formValueObj } : item
-        );
 
-        setRegistrationData(updatedData);
-        document.getElementById(`my_modal_${id}`).close();
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  const handleDelete = (id) => {
-    console.log("delete");
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        axios
-          .delete(`http://localhost:3000/registration/${id}`)
-          .then((res) => {
-            console.log(res.data);
-            Swal.fire({
-              title: "Deleted!",
-              text: "Your file has been deleted.",
-              icon: "success",
-            });
-
-            const remainingList = registrationData.filter(
-              (data) => data._id !== id
-            );
-            setRegistrationData(remainingList);
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-      }
-    });
-  };
   return (
     <tr>
       <td className="px-3 py-2">
@@ -105,14 +40,6 @@ const Rows = ({ el, index, registrationData, setRegistrationData }) => {
         <p>{additionalInfo}</p>
       </td>
       <td className="px-3 py-2">
-        {/* <button
-          type="button"
-          title="Open details"
-          className="p-1 rounded-full dark:text-gray-400 hover:dark:bg-gray-300 focus:dark:bg-gray-300"
-        >
-          Edit
-        </button> */}
-        {/* You can open the modal using document.getElementById('ID').showModal() method */}
         <button
           className="btn"
           onClick={() => document.getElementById(`my_modal_${_id}`).showModal()}
@@ -126,7 +53,18 @@ const Rows = ({ el, index, registrationData, setRegistrationData }) => {
                 ✕
               </button>
             </form>
-            <form method="dialog" onSubmit={(e) => handleEditData(e, _id)}>
+            <form
+              method="dialog"
+              onSubmit={(e) =>
+                handleEditData({
+                  e,
+                  id: _id,
+                  url: "http://localhost:3000/registration",
+                  data: registrationData,
+                  setFn: setRegistrationData,
+                })
+              }
+            >
               <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-50 ">
                 <div className="grid grid-cols-1 col-span-full space-y-2">
                   <div className="flex flex-col">
@@ -212,7 +150,18 @@ const Rows = ({ el, index, registrationData, setRegistrationData }) => {
         </dialog>
       </td>
       <td>
-        <button onClick={() => handleDelete(_id)} type="button" className="btn">
+        <button
+          onClick={() =>
+            handleDelete({
+              id: _id,
+              url: "http://localhost:3000/registration",
+              data: registrationData,
+              setFn: setRegistrationData,
+            })
+          }
+          type="button"
+          className="btn"
+        >
           Delete
         </button>
       </td>
