@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const AddMarathon = () => {
   const { user } = useAuth();
@@ -37,6 +38,9 @@ const AddMarathon = () => {
 
   return (
     <section className="p-6 dark:bg-gray-100 dark:text-gray-900">
+      <Helmet>
+        <title>Add Marathon</title>
+      </Helmet>
       <form
         noValidate=""
         onSubmit={handleFormSubmit}

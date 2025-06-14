@@ -3,6 +3,7 @@ import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import { useLoaderData } from "react-router";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const MarathonRegistration = () => {
   const { user } = useAuth();
@@ -32,6 +33,9 @@ const MarathonRegistration = () => {
   };
   return (
     <div className="w-11/12 mx-auto my-10">
+      <Helmet>
+        <title>Marathon Registration</title>
+      </Helmet>
       <form
         onSubmit={handleRegistration}
         className="container flex flex-col mx-auto space-y-12"

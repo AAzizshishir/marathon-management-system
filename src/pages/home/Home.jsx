@@ -1,7 +1,8 @@
 import { Suspense } from "react";
 import Banner from "../../components/banner/Banner";
 import MarathonSection from "../../components/marathon/Marathons";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet-async";
+import Loader from "../../components/loader/Loader";
 
 const marathonDataPromise = fetch("http://localhost:3000/marathons").then(
   (res) => res.json()
@@ -9,19 +10,19 @@ const marathonDataPromise = fetch("http://localhost:3000/marathons").then(
 
 const Home = () => {
   return (
-    <HelmetProvider>
-      <div className="w-11/12 mx-auto my-5">
-        <Helmet>
-          <title>Home</title>
-        </Helmet>
-        <Banner></Banner>
-        <Suspense fallback="Data are comming...">
-          <MarathonSection
-            marathonDataPromise={marathonDataPromise}
-          ></MarathonSection>
-        </Suspense>
-      </div>
-    </HelmetProvider>
+    <div className="w-11/12 mx-auto my-5">
+      <Helmet>
+        <meta charset="UTF-8" />
+        <title>Home</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
+      <Banner></Banner>
+      <Suspense fallback={<Loader></Loader>}>
+        <MarathonSection
+          marathonDataPromise={marathonDataPromise}
+        ></MarathonSection>
+      </Suspense>
+    </div>
   );
 };
 

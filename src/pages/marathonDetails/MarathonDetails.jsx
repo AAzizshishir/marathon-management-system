@@ -1,4 +1,5 @@
 // import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router";
 
 const MarathonDetails = () => {
@@ -25,6 +26,9 @@ const MarathonDetails = () => {
 
   return (
     <div className="w-11/12 mx-auto my-10">
+      <Helmet>
+        <title>Marathon Details</title>
+      </Helmet>
       <div>
         <img className="w-full" src={image} />
         <div>

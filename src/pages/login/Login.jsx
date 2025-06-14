@@ -1,6 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router";
 import useAuth from "../../hooks/useAuth";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { signInWithEmail, googleSignIn } = useAuth();
@@ -45,6 +46,9 @@ const Login = () => {
   };
   return (
     <div className="card bg-base-100 w-full mx-auto my-20 max-w-sm shrink-0 shadow-2xl">
+      <Helmet>
+        <title>Login</title>
+      </Helmet>
       <div className="card-body">
         <h1 className="text-5xl font-bold">Login now!</h1>
         <form onSubmit={handleLogin} className="fieldset">
