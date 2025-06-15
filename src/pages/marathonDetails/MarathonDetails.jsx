@@ -1,9 +1,7 @@
-// import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router";
 
 const MarathonDetails = () => {
-  // const [enable, setEnable] = useState(false);
   const {
     _id,
     title,
@@ -11,18 +9,12 @@ const MarathonDetails = () => {
     distance,
     description,
     image,
-    // createdAt,
     registrationCount,
     startRegistrationDate,
     endRegistrationDate,
     marathonStartDate,
   } = useLoaderData();
   console.log(title);
-  // console.log(data);
-
-  // if (startRegistrationDate) {
-  //   return setEnable(true);
-  // }
 
   return (
     <div className="w-11/12 mx-auto my-10">

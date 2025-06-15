@@ -3,6 +3,7 @@ import Banner from "../../components/banner/Banner";
 import MarathonSection from "../../components/marathon/Marathons";
 import { Helmet } from "react-helmet-async";
 import Loader from "../../components/loader/Loader";
+import UpcomingMarathons from "../../components/upcomingMarathon/UpcomingMarathons";
 
 const marathonDataPromise = fetch("http://localhost:3000/marathons").then(
   (res) => res.json()
@@ -22,6 +23,7 @@ const Home = () => {
           marathonDataPromise={marathonDataPromise}
         ></MarathonSection>
       </Suspense>
+      <UpcomingMarathons></UpcomingMarathons>
     </div>
   );
 };
