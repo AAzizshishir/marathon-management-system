@@ -1,31 +1,35 @@
 // import React from "react";
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
-import { useLoaderData } from "react-router";
+import { useLoaderData, useParams } from "react-router";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet-async";
 
 const MarathonRegistration = () => {
   const { user } = useAuth();
   const { title, marathonStartDate } = useLoaderData();
+  const { id } = useParams();
+  console.log(id);
 
   const handleRegistration = (e) => {
     e.preventDefault();
     const registrationData = new FormData(e.target);
     const registrationDataObj = Object.fromEntries(registrationData.entries());
-    console.log(registrationDataObj);
+    registrationDataObj.marathonId = id;
 
     axios
       .post("http://localhost:3000/registration", registrationDataObj)
       .then((res) => {
         console.log(res.data);
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Registration Successfull",
-          showConfirmButton: false,
-          timer: 1500,
-        });
+        if (res.data.insertedId) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Registration Successfull",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
       })
       .catch((error) => {
         console.log(error);

@@ -1,7 +1,8 @@
 import { Helmet } from "react-helmet-async";
-import { Link, useLoaderData } from "react-router";
+import { useLoaderData, useNavigate } from "react-router";
 
 const MarathonDetails = () => {
+  const navigate = useNavigate();
   const {
     _id,
     title,
@@ -9,12 +10,20 @@ const MarathonDetails = () => {
     distance,
     description,
     image,
-    registrationCount,
+    totalRegistrationCount,
     startRegistrationDate,
     endRegistrationDate,
     marathonStartDate,
   } = useLoaderData();
-  console.log(title);
+
+  const startDate = new Date(startRegistrationDate).toLocaleDateString();
+  const endDate = new Date(endRegistrationDate).toLocaleDateString();
+  const today = new Date().toLocaleDateString();
+  const isRegistrationOpen = today >= startDate && today <= endDate;
+
+  const handlebtn = (id) => {
+    navigate(`/marathonRegistration/${id}`);
+  };
 
   return (
     <div className="w-11/12 mx-auto my-10">
@@ -31,11 +40,15 @@ const MarathonDetails = () => {
           <p>Start Registration Date:{startRegistrationDate}</p>
           <p>End Registration Date:{endRegistrationDate}</p>
           <p>Marathon Start Date:{marathonStartDate}</p>
-          <h3>registrationCount:{registrationCount}</h3>
-          {/* {enable && } */}
-          <Link to={`/marathonRegistration/${_id}`}>
-            <button className="btn">Register</button>
-          </Link>
+          <h3>registrationCount:{totalRegistrationCount}</h3>
+
+          <button
+            onClick={() => handlebtn(_id)}
+            disabled={!isRegistrationOpen}
+            className={`btn disabled:cursor-not-allowed`}
+          >
+            Register
+          </button>
         </div>
       </div>
     </div>

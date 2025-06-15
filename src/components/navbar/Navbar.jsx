@@ -48,6 +48,7 @@ const Navbar = () => {
               className="w-12 h-12 rounded-full object-cover"
               src={user?.photoURL}
               alt="Aveter"
+              title={user?.email}
             />
             <button onClick={handleLogout} className="btn btn-primary">
               Logout

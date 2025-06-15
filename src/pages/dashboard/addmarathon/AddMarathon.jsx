@@ -148,7 +148,6 @@ const AddMarathon = () => {
                 readOnly
                 type="text"
                 name="totalRegistrationCount"
-                id=""
                 placeholder="0"
                 value={0}
                 className="w-full rounded-md px-2 py-0.5 border border-gray-500"
