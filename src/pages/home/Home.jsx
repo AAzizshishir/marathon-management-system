@@ -4,6 +4,7 @@ import MarathonSection from "../../components/marathon/Marathons";
 import { Helmet } from "react-helmet-async";
 import Loader from "../../components/loader/Loader";
 import UpcomingMarathons from "../../components/upcomingMarathon/UpcomingMarathons";
+import Plans from "../../components/plans/Plans";
 
 const marathonDataPromise = fetch("http://localhost:3000/marathons").then(
   (res) => res.json()
@@ -24,6 +25,7 @@ const Home = () => {
         ></MarathonSection>
       </Suspense>
       <UpcomingMarathons></UpcomingMarathons>
+      <Plans></Plans>
     </div>
   );
 };
