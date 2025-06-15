@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet-async";
 import Loader from "../../components/loader/Loader";
 import UpcomingMarathons from "../../components/upcomingMarathon/UpcomingMarathons";
 import Plans from "../../components/plans/Plans";
+import Faq from "../../components/faq/Faq";
 
 const marathonDataPromise = fetch("http://localhost:3000/marathons").then(
   (res) => res.json()
@@ -26,6 +27,7 @@ const Home = () => {
       </Suspense>
       <UpcomingMarathons></UpcomingMarathons>
       <Plans></Plans>
+      <Faq></Faq>
     </div>
   );
 };
