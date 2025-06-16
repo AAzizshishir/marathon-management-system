@@ -11,8 +11,7 @@ const AddMarathon = () => {
   const [regiStart, setRegiStart] = useState(new Date());
   const [regiEnd, setRegiEnd] = useState(new Date());
   const [marathonStart, setMarathonStart] = useState(new Date());
-  const createdAt = new Date();
-  // console.log(createdAt.toLocaleDateString());
+  const createdAt = new Date().toLocaleDateString();
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const formValue = new FormData(e.target);
@@ -137,7 +136,7 @@ const AddMarathon = () => {
               <input
                 type="hidden"
                 name="createdAt"
-                value={createdAt.toDateString()}
+                value={createdAt}
                 className="w-full rounded-md px-2 py-0.5 border border-gray-500"
               />
             </div>

@@ -1,13 +1,54 @@
-import { use, useState } from "react";
+import { use, useEffect, useState } from "react";
 import Rows from "./Rows";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const ApplyList = ({ registrationPromise }) => {
+  const [searchTerm, setSearchTerm] = useState("");
   const data = use(registrationPromise);
   const [registrationData, setRegistrationData] = useState(data.data);
 
+  useEffect(() => {
+    if (searchTerm.trim() === "") {
+      setRegistrationData(data.data);
+      return;
+    }
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(
+          `http://localhost:3000/searchMarathon?keyword=${searchTerm}`
+        );
+        setRegistrationData(res.data);
+      } catch (error) {
+        console.log(error);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong, Try again!",
+        });
+      }
+    };
+
+    fetchData();
+  }, [searchTerm, data.data]);
+
   return (
     <div className="container p-2 mx-auto sm:p-4 dark:text-gray-800">
-      <h2 className="mb-4 text-2xl font-semibold leading-tight">Contacts</h2>
+      <h2 className="mb-4 text-2xl font-semibold leading-tight">
+        Search by title
+      </h2>
+      <form>
+        <input
+          onChange={(e) => setSearchTerm(e.target.value)}
+          type="text"
+          name="search"
+          defaultValue={searchTerm}
+          className="input my-2"
+          required
+          placeholder="Search"
+        />
+      </form>
+
       <div className="overflow-x-auto">
         <table className="w-full p-6 text-xs text-left whitespace-nowrap">
           <colgroup>

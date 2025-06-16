@@ -8,6 +8,7 @@ const Card = ({ marathonData }) => {
     startRegistrationDate,
     endRegistrationDate,
     _id,
+    createdAt,
   } = marathonData;
   return (
     <div className="max-w-xs rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
@@ -23,6 +24,10 @@ const Card = ({ marathonData }) => {
           <div>
             <h2>Registration Dates</h2>
             {startRegistrationDate} to {endRegistrationDate}
+          </div>
+          <div>
+            <h2>Created At</h2>
+            {createdAt}
           </div>
         </div>
         <Link to={`/marathonDetails/${_id}`}>
