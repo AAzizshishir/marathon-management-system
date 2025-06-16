@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { useLoaderData, useNavigate } from "react-router";
+import CountDown from "../../components/countDown/CountDown";
 
 const MarathonDetails = () => {
   const navigate = useNavigate();
@@ -32,23 +33,32 @@ const MarathonDetails = () => {
       </Helmet>
       <div>
         <img className="w-full" src={image} />
-        <div>
-          <h2>title:{title}</h2>
-          <p>location:{location}</p>
-          <p>distance:{distance}</p>
-          <p>description:{description}</p>
-          <p>Start Registration Date:{startRegistrationDate}</p>
-          <p>End Registration Date:{endRegistrationDate}</p>
-          <p>Marathon Start Date:{marathonStartDate}</p>
-          <h3>registrationCount:{totalRegistrationCount}</h3>
+        <div className="flex items-center justify-between">
+          <div>
+            <h2>title:{title}</h2>
+            <p>location:{location}</p>
+            <p>distance:{distance}</p>
+            <p>description:{description}</p>
+            <p>Start Registration Date:{startRegistrationDate}</p>
+            <p>End Registration Date:{endRegistrationDate}</p>
+            <p>Marathon Start Date:{marathonStartDate}</p>
+            <h3>registrationCount:{totalRegistrationCount}</h3>
 
-          <button
-            onClick={() => handlebtn(_id)}
-            disabled={!isRegistrationOpen}
-            className={`btn disabled:cursor-not-allowed`}
-          >
-            Register
-          </button>
+            <button
+              onClick={() => handlebtn(_id)}
+              disabled={!isRegistrationOpen}
+              className={`btn disabled:cursor-not-allowed`}
+            >
+              Register
+            </button>
+          </div>
+          <div>
+            <CountDown
+              startDate={startDate}
+              endDate={endDate}
+              today={today}
+            ></CountDown>
+          </div>
         </div>
       </div>
     </div>

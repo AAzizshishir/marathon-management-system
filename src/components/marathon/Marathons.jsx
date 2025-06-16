@@ -3,7 +3,7 @@ import Card from "./Card";
 
 const MarathonSection = ({ marathonDataPromise }) => {
   const marathonsData = use(marathonDataPromise);
-  console.log(marathonsData);
+
   return (
     <div className="my-16">
       <h1 className="text-5xl text-center my-5 font-bold">Marathons</h1>
