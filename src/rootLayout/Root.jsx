@@ -4,7 +4,7 @@ import Footer from "../components/footer/Footer";
 
 const Root = () => {
   return (
-    <div>
+    <div className="font-primary">
       <Navbar></Navbar>
       <Outlet></Outlet>
       <Footer></Footer>

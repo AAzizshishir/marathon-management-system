@@ -4,13 +4,28 @@ const Aside = () => {
   return (
     <ul>
       <li>
-        <NavLink to={"addmarathon"}>Add Marathon</NavLink>
+        <NavLink
+          to={"addmarathon"}
+          className={({ isActive }) => (isActive ? "link" : "")}
+        >
+          Add Marathon
+        </NavLink>
       </li>
       <li>
-        <NavLink to={"marathonlist"}>My Marathon List</NavLink>
+        <NavLink
+          to={"marathonlist"}
+          className={({ isActive }) => (isActive ? "link" : "")}
+        >
+          My Marathon List
+        </NavLink>
       </li>
       <li>
-        <NavLink to={"applylist"}>My Apply List</NavLink>
+        <NavLink
+          to={"applylist"}
+          className={({ isActive }) => (isActive ? "link" : "")}
+        >
+          My Apply List
+        </NavLink>
       </li>
     </ul>
   );

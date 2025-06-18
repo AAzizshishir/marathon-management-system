@@ -12,32 +12,47 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar bg-base-100 shadow-sm">
+    <nav className="navbar font-secondary bg-neutral text-neutral-content opacity-85 px-2 lg:px-10">
       <div className="flex-1">
-        <Link className="btn btn-ghost text-xl">
+        <h1 className="text-2xl lg:text-4xl text-primary">
           Marathon Management System
-        </Link>
+        </h1>
       </div>
       <div className="flex items-center">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <NavLink to={"/"}>Home</NavLink>
+        <ul className="menu menu-horizontal px-1 tracking-wider md:space-x-1.5 text-lg flex flex-col md:flex-row">
+          <li className="hover:text-primary">
+            <NavLink
+              to={"/"}
+              className={({ isActive }) => (isActive ? "text-primary" : "")}
+            >
+              Home
+            </NavLink>
           </li>
-          <li>
-            <NavLink to={"/marathon"}>Marathon</NavLink>
+          <li className="hover:text-primary">
+            <NavLink
+              to={"/marathon"}
+              className={({ isActive }) => (isActive ? "text-primary" : "")}
+            >
+              Marathon
+            </NavLink>
           </li>
           {user ? (
-            <li>
-              <NavLink to={"/dashboard"}>Dashboard</NavLink>
+            <li className="hover:text-primary">
+              <NavLink
+                to={"/dashboard"}
+                className={({ isActive }) => (isActive ? "text-primary" : "")}
+              >
+                Dashboard
+              </NavLink>
             </li>
           ) : (
             <>
-              <li>
+              <button className="btn bg-primary text-black text-xl tracking-wider font-normal mb-1">
                 <NavLink to={"/login"}>Login</NavLink>
-              </li>
-              <li>
+              </button>
+              <button className="btn bg-primary text-black text-xl tracking-wider font-normal">
                 <NavLink to={"/register"}>Register</NavLink>
-              </li>
+              </button>
             </>
           )}
         </ul>
@@ -50,7 +65,10 @@ const Navbar = () => {
               alt="Aveter"
               title={user?.email}
             />
-            <button onClick={handleLogout} className="btn btn-primary">
+            <button
+              onClick={handleLogout}
+              className="btn bg-primary text-black text-xl font-normal tracking-wider border-none outline-0 "
+            >
               Logout
             </button>
           </div>
