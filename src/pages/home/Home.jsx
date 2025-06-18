@@ -13,7 +13,7 @@ const marathonDataPromise = fetch("http://localhost:3000/marathons").then(
 
 const Home = () => {
   return (
-    <div className="w-11/12 mx-auto my-5">
+    <div>
       <Helmet>
         <meta charset="UTF-8" />
         <title>Home</title>
