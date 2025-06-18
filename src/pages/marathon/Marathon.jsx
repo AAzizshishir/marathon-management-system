@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router";
-import Card from "../../components/marathon/Card";
 import { Helmet } from "react-helmet-async";
+import Card from "../../components/topmarathon/Card";
 
 const Marathon = () => {
   const allMarathonsData = useLoaderData();

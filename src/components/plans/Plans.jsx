@@ -1,6 +1,6 @@
 const Plans = () => {
   return (
-    <div>
+    <div className="container mx-auto my-20">
       <h1 className="text-5xl font-bold">
         Get More From Every Run With Our Plans.
       </h1>

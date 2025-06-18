@@ -1,6 +1,6 @@
 const UpcomingMarathons = () => {
   return (
-    <div className="my-20">
+    <div className="my-20 container mx-auto">
       <h1 className="text-center text-5xl font-bold mb-4">Upcoming Events</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Card 1 */}

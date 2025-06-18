@@ -36,12 +36,8 @@ const Login = () => {
         });
         navigate(location.state || "/");
       })
-      .catch(() => {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Something went wrong!",
-        });
+      .catch((error) => {
+        console.log(error);
       });
   };
   return (
