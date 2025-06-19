@@ -47,10 +47,10 @@ const Navbar = () => {
             </li>
           ) : (
             <>
-              <button className="btn bg-primary text-black text-xl tracking-wider font-normal mb-1">
+              <button className="btn bg-primary text-primary-content text-xl tracking-wider font-normal mb-1">
                 <NavLink to={"/login"}>Login</NavLink>
               </button>
-              <button className="btn bg-primary text-black text-xl tracking-wider font-normal">
+              <button className="btn bg-primary text-primary-content text-xl tracking-wider font-normal">
                 <NavLink to={"/register"}>Register</NavLink>
               </button>
             </>

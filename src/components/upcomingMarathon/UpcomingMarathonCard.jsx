@@ -6,11 +6,11 @@ const UpcomingMarathonCard = ({ upcomingData }) => {
     upcomingData;
   return (
     <div className=" bg-black opacity-85 text-white flex shadow-sm">
-      <figure>
+      <figure className="flex-1">
         <img className="object-cover object-center h-72" src={image} />
       </figure>
-      <div className="card-body ">
-        <h2 className="card-title">{title}</h2>
+      <div className="card-body flex flex-col justify-center flex-1">
+        <h2 className="text-3xl md:text-4xl">{title}</h2>
         <div className="flex gap-1 items-center">
           <FaLocationDot />
           {location}

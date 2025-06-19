@@ -5,18 +5,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-/* @theme {
-  --font-primary: "Poppins", sans-serif;
-
-  --primary-color: #0f172a;
-  --secondary-color: #3b82f6;
-  --accent-color: #f43f5e;
-  --text-color: #e5e7eb;
-  --bg-color: #1e293b;
-
-  --border-color: #334155;
-  --hover-color: #f87171;
-} */
 @theme {
   --font-primary: "Poppins", sans-serif;
   --font-secondary: "Teko", sans-serif;
@@ -26,37 +14,24 @@
   /* 🌕 Base Backgrounds */
   name: "light";
   default: true; /* set as default */
-  --color-base-100: #f8fdf1; /* একদম হালকা সবুজাভ সাদা */
-  --color-base-200: #bebebe; /* অফ-হোয়াইট উইথ লেমন টিন্ট */
-  --color-base-300: #7f7f7f; /* হালকা সবুজাভ ব্যাকগ্রাউন্ড */
-  --color-base-content: #2e2f1e; /* ডার্ক গ্রিনিশ ব্ল্যাক ফর টেক্সট */
+  --color-base-100: #f8fdf1;
+  --color-base-200: #bebebe;
+  --color-base-300: #7f7f7f;
+  --color-base-content: #2e2f1e;
 
   /* 🟩 Primary (Lime Energy Green) */
-  --color-primary: #d0f700; /* তোমার নির্বাচিত vibrant lime green */
-  --color-primary-content: #000000; /* হালকা লেখা, বোতামে টেক্সটের জন্য */
+  --color-primary: #d0f700;
+  --color-primary-content: #000000;
 
   /* 🟦 Secondary (Cool Blue contrast) */
-  --color-secondary: #00b2ff; /* ব্রাইট ব্লু, সবুজের পাশে সুন্দর contrast */
+  --color-secondary: #00b2ff;
   --color-secondary-content: #ffffff;
 
   /* 🟨 Accent (Warm Orange pop) */
-  --color-accent: #ffa53b; /* লাইম ও ব্লুর পাশে হালকা গরম শেড */
+  --color-accent: #ffa53b;
   --color-accent-content: #2f1c00;
 
   /* ⚫ Neutral (Muted cool gray) */
-  --color-neutral: #000000; /* নিরপেক্ষ শেড - ন্যাভবার, ফূটার ইত্যাদিতে */
+  --color-neutral: #000000;
   --color-neutral-content: #fefeff;
-
-  /* ℹ️ Info / ✅ Success / ⚠️ Warning / ❌ Error */
-  --color-info: #5bb4ff; /* info alert এর জন্য হালকা ব্লু */
-  --color-info-content: #ffffff;
-
-  --color-success: #4ddf75; /* সফলতার জন্য হালকা গ্রিন */
-  --color-success-content: #ffffff;
-
-  --color-warning: #ffd447; /* সতর্কতা, ওয়ার্নিং মেসেজ */
-  --color-warning-content: #332b00;
-
-  --color-error: #ff5b5b; /* ভুলের জন্য ব্রাইট রেড */
-  --color-error-content: #ffffff;
 }
