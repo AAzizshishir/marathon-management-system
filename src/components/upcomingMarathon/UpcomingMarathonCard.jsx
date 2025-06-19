@@ -5,23 +5,22 @@ const UpcomingMarathonCard = ({ upcomingData }) => {
   const { image, title, location, distance, registration, eventDate } =
     upcomingData;
   return (
-    <div className="grid grid-cols-2">
-      <img className="rounded-l-2xl h-full w-full object-cover" src={image} />
-      <div className="bg-black opacity-85 text-white p-3 rounded-r-2xl flex flex-col justify-center">
-        <h2 className="text-3xl font-bold">{title}</h2>
-        <p className="flex items-center gap-1 my-2">
+    <div className=" bg-black opacity-85 text-white flex shadow-sm">
+      <figure>
+        <img className="object-cover object-center h-72" src={image} />
+      </figure>
+      <div className="card-body ">
+        <h2 className="card-title">{title}</h2>
+        <div className="flex gap-1 items-center">
           <FaLocationDot />
-          <span>{location}</span>
-        </p>
-        <h3 className="flex items-center gap-1">
-          {" "}
-          <BiSolidCategory /> <span>{distance}</span>{" "}
-        </h3>
-        <h3 className="my-2">
-          {" "}
-          <span>Reg:</span> {registration}
-        </h3>
-        <p> Event: {eventDate}</p>
+          {location}
+        </div>
+        <div className="flex gap-1 items-center">
+          <BiSolidCategory />
+          {distance}
+        </div>
+        <h4>Reg:{registration}</h4>
+        <h4>Event:{eventDate}</h4>
       </div>
     </div>
   );
