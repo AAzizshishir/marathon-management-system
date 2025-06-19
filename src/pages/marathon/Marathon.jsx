@@ -10,10 +10,8 @@ const Marathon = () => {
       <Helmet>
         <title>Marathon</title>
       </Helmet>
-      <h1 className="text-6xl text-center">
-        Marathons{allMarathonsData.length}
-      </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <h1 className="text-6xl font-bold text-center">All Marathons</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-3">
         {allMarathonsData.map((marathonData) => (
           <Card key={marathonData._id} marathonData={marathonData}></Card>
         ))}

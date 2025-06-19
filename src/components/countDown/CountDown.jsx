@@ -33,9 +33,11 @@ const CountDown = ({ endDate }) => {
   const daysDuration = days * daySeconds;
 
   return (
-    <div className="">
-      <h2 className="text-4xl my-4 text-center">Remainig Registration</h2>
-      <div className="flex gap-8">
+    <div>
+      <h2 className="text-4xl my-6 text-center font-bold">
+        Remainig Registration
+      </h2>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
         <CountdownCircleTimer
           {...timerProps}
           colors="#7E2E84"
