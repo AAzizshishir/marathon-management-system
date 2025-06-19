@@ -11,6 +11,10 @@ const marathonDataPromise = fetch("http://localhost:3000/marathons").then(
   (res) => res.json()
 );
 
+const UpcomingMarathonsPromise = fetch(
+  "http://localhost:3000/upcomingMarathon"
+).then((res) => res.json());
+
 const Home = () => {
   return (
     <div>
@@ -23,7 +27,9 @@ const Home = () => {
       <Suspense fallback={<Loader></Loader>}>
         <TopMarathons marathonDataPromise={marathonDataPromise}></TopMarathons>
       </Suspense>
-      <UpcomingMarathons></UpcomingMarathons>
+      <UpcomingMarathons
+        UpcomingMarathonsPromise={UpcomingMarathonsPromise}
+      ></UpcomingMarathons>
       <Plans></Plans>
       <Faq></Faq>
     </div>
