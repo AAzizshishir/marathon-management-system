@@ -27,7 +27,6 @@ const routes = createBrowserRouter([
       {
         path: "marathon",
         hydrateFallbackElement: <Loader></Loader>,
-        loader: () => fetch("http://localhost:3000/allMarathons"),
         element: (
           <PrivateRoutes>
             <Marathon></Marathon>

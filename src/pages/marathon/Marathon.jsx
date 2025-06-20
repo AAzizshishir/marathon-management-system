@@ -1,10 +1,19 @@
-import { useLoaderData } from "react-router";
 import { Helmet } from "react-helmet-async";
 import Card from "../../components/topmarathon/Card";
+import { useEffect, useState } from "react";
+import UseAllMarathonsApi from "../../api/useallMarathonsApi";
 
 const Marathon = () => {
-  const allMarathonsData = useLoaderData();
+  const { getAllMarathons } = UseAllMarathonsApi();
+  const [allMarathonsData, setAllMarathonsData] = useState([]);
   console.log(allMarathonsData);
+
+  useEffect(() => {
+    getAllMarathons().then((data) => {
+      setAllMarathonsData(data);
+    });
+  }, []);
+
   return (
     <div className="my-10 w-11/12 mx-auto">
       <Helmet>
