@@ -41,7 +41,7 @@ const Rows = ({ el, index, registrationData, setRegistrationData }) => {
       </td>
       <td className="px-3 py-2">
         <button
-          className="btn"
+          className="btn bg-primary text-primary-content font-secondary font-normal text-lg tracking-wider"
           onClick={() => document.getElementById(`my_modal_${_id}`).showModal()}
         >
           Edit
@@ -160,7 +160,7 @@ const Rows = ({ el, index, registrationData, setRegistrationData }) => {
             })
           }
           type="button"
-          className="btn"
+          className="btn bg-primary text-primary-content font-secondary font-normal text-lg tracking-wider"
         >
           Delete
         </button>

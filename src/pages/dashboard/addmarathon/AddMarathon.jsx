@@ -56,7 +56,7 @@ const AddMarathon = () => {
                 className="w-full rounded-md px-2 py-0.5 border border-gray-500"
               />
             </div>
-            <div className="flex gap-6 w-full justify-between">
+            <div className="md:flex gap-6 w-full justify-between">
               <div className="col-span-full sm:col-span-3">
                 <label className="text-sm">Start Registration Date</label>
                 <br />

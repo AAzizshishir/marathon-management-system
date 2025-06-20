@@ -50,7 +50,7 @@ const MarathonRows = ({ marathonData, marathonsData, setMarathonsData }) => {
       </td>
       <td className="px-3 py-2">
         <button
-          className="btn"
+          className="btn bg-primary text-primary-content font-secondary font-normal text-lg tracking-wider"
           onClick={() => document.getElementById(`my_modal_${_id}`).showModal()}
         >
           Edit
@@ -158,7 +158,7 @@ const MarathonRows = ({ marathonData, marathonsData, setMarathonsData }) => {
 
                   <input
                     type="submit"
-                    className="btn btn-primary rounded-lg my-2"
+                    className="btn bg-primary text-primary-content font-secondary font-normal text-lg tracking-wider"
                     value="Update"
                   />
                 </div>
@@ -169,7 +169,7 @@ const MarathonRows = ({ marathonData, marathonsData, setMarathonsData }) => {
       </td>
       <td>
         <button
-          className="btn"
+          className="btn bg-primary text-primary-content font-secondary font-normal text-lg tracking-wider"
           onClick={() =>
             handleDelete({
               id: _id,
