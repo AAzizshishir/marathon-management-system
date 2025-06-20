@@ -16,6 +16,7 @@ A full-featured web application to manage and explore marathons — built with R
 | **React Router DOM**             | Page navigation                             |
 | **Firebase**                     | Authentication                              |
 | **MongoDB**                      | Database for storing events & registrations |
+| **Tailwind Css**                 | Tailwind CSS                                |
 | **DaisyUI**                      | Tailwind CSS UI components                  |
 | **Mamba UI**                     | Additional UI components                    |
 | **React Datepicker**             | Selecting event & registration dates        |

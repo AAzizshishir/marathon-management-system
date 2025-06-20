@@ -54,6 +54,7 @@ const Login = () => {
             name="email"
             className="input"
             placeholder="Email"
+            required
           />
           <label className="label">Password</label>
           <input
@@ -61,12 +62,19 @@ const Login = () => {
             name="password"
             className="input"
             placeholder="Password"
+            required
           />
-          <button type="submit" className="btn btn-neutral mt-4">
+          <button
+            type="submit"
+            className="btn bg-primary text-primary-content font-secondary font-normal text-lg tracking-wider mt-4"
+          >
             Login
           </button>
           <div className="divider">OR</div>
-          <button onClick={handleGoogleSignIn} className="btn btn-neutral">
+          <button
+            onClick={handleGoogleSignIn}
+            className="btn bg-primary text-primary-content font-secondary font-normal text-lg tracking-wider"
+          >
             Sign In with google
           </button>
           <p>

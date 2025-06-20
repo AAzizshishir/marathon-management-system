@@ -69,7 +69,7 @@ const Register = () => {
         <title>Register</title>
       </Helmet>
       <div className="card-body">
-        <h1 className="text-5xl font-bold">Register now!</h1>
+        <h1 className="text-4xl font-bold">Register now!</h1>
         <form onSubmit={handleRegister} className="fieldset">
           <label className="label">Name</label>
           <input
@@ -95,31 +95,9 @@ const Register = () => {
             placeholder="Photo"
             required
           />
-          {/* <label className="label">Password</label>
-          <input
-            type="password"
-            name="password"
-            className="input"
-            placeholder="Password"
-          /> */}
 
+          <label className="label">Password</label>
           <label className="input validator">
-            {/* <svg
-              className="h-[1em] opacity-50"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <g
-                strokeLinejoin="round"
-                strokeLinecap="round"
-                strokeWidth="2.5"
-                fill="none"
-                stroke="currentColor"
-              >
-                <path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"></path>
-                <circle cx="16.5" cy="7.5" r=".5" fill="currentColor"></circle>
-              </g>
-            </svg> */}
             <input
               type="password"
               required
@@ -137,11 +115,17 @@ const Register = () => {
             At least one uppercase letter
           </p>
 
-          <button type="submit" className="btn btn-neutral mt-4">
+          <button
+            type="submit"
+            className="btn bg-primary text-primary-content font-secondary font-normal text-lg tracking-wider mt-4"
+          >
             Register
           </button>
           <div className="divider">OR</div>
-          <button onClick={handleGoogleSignUp} className="btn btn-neutral">
+          <button
+            onClick={handleGoogleSignUp}
+            className="btn bg-primary text-primary-content font-secondary font-normal text-lg tracking-wider"
+          >
             Sign Up with google
           </button>
           <p>
