@@ -1,12 +1,36 @@
-# React + Vite
+# 🏃‍♂️ Marathon Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-featured web application to manage and explore marathons — built with React, Firebase Auth, MongoDB, and styled using DaisyUI & Mamba UI.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[🔗 Live Site Link](https://your-marathon-app-url.com)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📦 Technologies Used
+
+| Technology                       | Purpose                                     |
+| -------------------------------- | ------------------------------------------- |
+| **React**                        | Frontend UI                                 |
+| **React Router DOM**             | Page navigation                             |
+| **Firebase**                     | Authentication                              |
+| **MongoDB**                      | Database for storing events & registrations |
+| **DaisyUI**                      | Tailwind CSS UI components                  |
+| **Mamba UI**                     | Additional UI components                    |
+| **React Datepicker**             | Selecting event & registration dates        |
+| **React Countdown Circle Timer** | Displaying countdown to events              |
+
+---
+
+## 🔐 Features
+
+- 🔐 **Secure Authentication** with Firebase
+- 🗓️ **Create / Register / Manage Marathons**
+- 📅 **Registration & Event Date Selection**
+- ⏱️ **Live Countdown Timer** for events
+- 📋 **Dynamic User Dashboard**
+- 🎨 **Beautiful Responsive UI** with DaisyUI & Mamba UI
+- 📦 **Data Stored in MongoDB (CRUD)**
+
+---
