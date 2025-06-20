@@ -3,14 +3,14 @@ import Rows from "./Rows";
 import axios from "axios";
 import Swal from "sweetalert2";
 
-const ApplyList = ({ registrationPromise }) => {
+const ApplyList = ({ getMyRegistrations }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const data = use(registrationPromise);
-  const [registrationData, setRegistrationData] = useState(data.data);
+  const data = use(getMyRegistrations);
+  const [registrationData, setRegistrationData] = useState(data);
 
   useEffect(() => {
     if (searchTerm.trim() === "") {
-      setRegistrationData(data.data);
+      setRegistrationData(data);
       return;
     }
     const fetchData = async () => {
@@ -18,7 +18,7 @@ const ApplyList = ({ registrationPromise }) => {
         const res = await axios.get(
           `http://localhost:3000/searchMarathon?keyword=${searchTerm}`
         );
-        setRegistrationData(res.data);
+        setRegistrationData(res);
       } catch (error) {
         console.log(error);
         Swal.fire({
@@ -30,7 +30,7 @@ const ApplyList = ({ registrationPromise }) => {
     };
 
     fetchData();
-  }, [searchTerm, data.data]);
+  }, [searchTerm, data]);
 
   return (
     <div className="container p-2 mx-auto sm:p-4 dark:text-gray-800">

@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 
 const Dashboard = () => {
   return (
-    <div className="grid grid-cols-12 gap-4 border border-gray-600 m-5 h-[calc(100vh-330px)]">
+    <div className="grid grid-cols-12 gap-4 border border-gray-600 m-5 min-h-screen">
       <Helmet>
         <title>Dashboard</title>
       </Helmet>

@@ -1,10 +1,9 @@
 import { use, useState } from "react";
 import MarathonRows from "./MarathonRows";
 
-const MarathonList = ({ marathonsPromise }) => {
-  const marathonList = use(marathonsPromise);
-  //   console.log(marathonList.data);
-  const [marathonsData, setMarathonsData] = useState(marathonList.data);
+const MarathonList = ({ getMyMarathons }) => {
+  const marathonList = use(getMyMarathons);
+  const [marathonsData, setMarathonsData] = useState(marathonList);
   return (
     <div className="container p-2 mx-auto sm:p-4 dark:text-gray-800">
       <h2 className="mb-4 text-2xl font-semibold leading-tight">Contacts</h2>

@@ -119,7 +119,7 @@ const MarathonRegistration = () => {
 
             <input
               type="submit"
-              className="btn btn-primary rounded-lg my-2"
+              className="btn btn-primary text-primary-content font-secondary font-normal text-xl tracking-wider rounded-lg my-2"
               value="Register"
             />
           </div>

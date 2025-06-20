@@ -1,12 +1,15 @@
 import { Suspense } from "react";
 import MarathonList from "../../../components/marathonList/MarathonList";
 import Loader from "../../../components/loader/Loader";
-import { marathonsPromise } from "./../../../api/registrationApi";
 import useAuth from "../../../hooks/useAuth";
 import { Helmet } from "react-helmet-async";
+import useMarathonsApi from "../../../api/useMarathonsApi";
 
 const MyMarathonList = () => {
   const { user } = useAuth();
+
+  const { getMyMarathons } = useMarathonsApi();
+
   return (
     <div>
       <Helmet>
@@ -14,7 +17,7 @@ const MyMarathonList = () => {
       </Helmet>
       <Suspense fallback={<Loader></Loader>}>
         <MarathonList
-          marathonsPromise={marathonsPromise(user.email)}
+          getMyMarathons={getMyMarathons(user.email)}
         ></MarathonList>
       </Suspense>
     </div>
