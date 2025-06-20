@@ -37,7 +37,9 @@ const routes = createBrowserRouter([
         path: "/marathonDetails/:id",
         hydrateFallbackElement: <Loader></Loader>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/allMarathons/${params.id}`),
+          fetch(
+            `https://marathon-management-system-server-ten.vercel.app/allMarathons/${params.id}`
+          ),
         element: (
           <PrivateRoutes>
             <MarathonDetails></MarathonDetails>
@@ -48,7 +50,9 @@ const routes = createBrowserRouter([
         path: "marathonRegistration/:id",
         hydrateFallbackElement: <Loader></Loader>,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/allMarathons/${params.id}`),
+          fetch(
+            `https://marathon-management-system-server-ten.vercel.app/allMarathons/${params.id}`
+          ),
         element: (
           <PrivateRoutes>
             <MarathonRegistration></MarathonRegistration>

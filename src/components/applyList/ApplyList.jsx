@@ -16,7 +16,7 @@ const ApplyList = ({ getMyRegistrations }) => {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:3000/searchMarathon?keyword=${searchTerm}`
+          `https://marathon-management-system-server-ten.vercel.app/searchMarathon?keyword=${searchTerm}`
         );
         setRegistrationData(res);
       } catch (error) {

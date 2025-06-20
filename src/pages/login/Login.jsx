@@ -14,8 +14,7 @@ const Login = () => {
     const password = e.target.password.value;
 
     signInWithEmail(email, password)
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
         navigate(location.state || "/");
       })
       .catch((error) => {
@@ -37,7 +36,7 @@ const Login = () => {
         navigate(location.state || "/");
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error.message);
       });
   };
   return (

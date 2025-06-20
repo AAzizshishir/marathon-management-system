@@ -19,7 +19,10 @@ const AddMarathon = () => {
     formObj.email = user.email;
 
     axios
-      .post("http://localhost:3000/marathons", formObj)
+      .post(
+        "https://marathon-management-system-server-ten.vercel.app/marathons",
+        formObj
+      )
       .then((res) => {
         console.log(res.data);
         Swal.fire({

@@ -7,12 +7,12 @@ import Plans from "../../components/plans/Plans";
 import Faq from "../../components/faq/Faq";
 import TopMarathons from "../../components/topmarathon/TopMarathons";
 
-const marathonDataPromise = fetch("http://localhost:3000/marathons").then(
-  (res) => res.json()
-);
+const marathonDataPromise = fetch(
+  "https://marathon-management-system-server-ten.vercel.app/marathons"
+).then((res) => res.json());
 
 const UpcomingMarathonsPromise = fetch(
-  "http://localhost:3000/upcomingMarathon"
+  "https://marathon-management-system-server-ten.vercel.app/upcomingMarathon"
 ).then((res) => res.json());
 
 const Home = () => {

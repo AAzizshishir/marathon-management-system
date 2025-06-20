@@ -18,7 +18,10 @@ const MarathonRegistration = () => {
     registrationDataObj.marathonId = id;
 
     axios
-      .post("http://localhost:3000/registration", registrationDataObj)
+      .post(
+        "https://marathon-management-system-server-ten.vercel.app/registration",
+        registrationDataObj
+      )
       .then((res) => {
         console.log(res.data);
         if (res.data.insertedId) {

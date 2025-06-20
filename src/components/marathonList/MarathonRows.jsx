@@ -68,7 +68,7 @@ const MarathonRows = ({ marathonData, marathonsData, setMarathonsData }) => {
                 handleEditData({
                   e,
                   id: _id,
-                  url: "http://localhost:3000/allMarathons",
+                  url: "https://marathon-management-system-server-ten.vercel.app/allMarathons",
                   data: marathonsData,
                   setFn: setMarathonsData,
                 })
@@ -173,7 +173,7 @@ const MarathonRows = ({ marathonData, marathonsData, setMarathonsData }) => {
           onClick={() =>
             handleDelete({
               id: _id,
-              url: "http://localhost:3000/allMarathons",
+              url: "https://marathon-management-system-server-ten.vercel.app/allMarathons",
               data: marathonsData,
               setFn: setMarathonsData,
             })

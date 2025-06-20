@@ -59,7 +59,7 @@ const Rows = ({ el, index, registrationData, setRegistrationData }) => {
                 handleEditData({
                   e,
                   id: _id,
-                  url: "http://localhost:3000/registration",
+                  url: "https://marathon-management-system-server-ten.vercel.app/registration",
                   data: registrationData,
                   setFn: setRegistrationData,
                 })
@@ -154,7 +154,7 @@ const Rows = ({ el, index, registrationData, setRegistrationData }) => {
           onClick={() =>
             handleDelete({
               id: _id,
-              url: "http://localhost:3000/registration",
+              url: "https://marathon-management-system-server-ten.vercel.app/registration",
               data: registrationData,
               setFn: setRegistrationData,
             })
