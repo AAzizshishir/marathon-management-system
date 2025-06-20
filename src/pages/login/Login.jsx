@@ -7,7 +7,7 @@ const Login = () => {
   const { signInWithEmail, googleSignIn } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
-  console.log(location);
+
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -15,10 +15,22 @@ const Login = () => {
 
     signInWithEmail(email, password)
       .then(() => {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Successfully Login",
+          showConfirmButton: false,
+          timer: 1500,
+        });
         navigate(location.state || "/");
       })
       .catch((error) => {
         console.log(error.message);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: error.message,
+        });
       });
     e.target.reset();
   };
@@ -37,6 +49,11 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error.message);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: error.message,
+        });
       });
   };
   return (

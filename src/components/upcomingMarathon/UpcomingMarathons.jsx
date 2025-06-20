@@ -3,7 +3,7 @@ import UpcomingMarathonCard from "./UpcomingMarathonCard";
 
 const UpcomingMarathons = ({ UpcomingMarathonsPromise }) => {
   const data = use(UpcomingMarathonsPromise);
-  console.log(data);
+
   return (
     <div className="my-20 container mx-auto px-4">
       <h1 className="text-center text-5xl font-bold mb-4">Upcoming Events</h1>

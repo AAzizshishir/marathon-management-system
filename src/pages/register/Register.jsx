@@ -24,20 +24,22 @@ const Register = () => {
         });
         navigate("/");
         updateUserProfile({ displayName: name, photoURL: photourl })
-          .then(() => {})
-          .catch(() => {
+          .then((result) => {
+            console.log(result);
+          })
+          .catch((error) => {
             Swal.fire({
               icon: "error",
               title: "Oops...",
-              text: "Something went wrong!",
+              text: error.message,
             });
           });
       })
-      .catch(() => {
+      .catch((error) => {
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "Something went wrong!",
+          text: error.message,
         });
       });
     e.target.reset();
@@ -102,7 +104,8 @@ const Register = () => {
               type="password"
               required
               placeholder="Password"
-              minlength="6"
+              name="password"
+              minLength="6"
               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
               title="Must be more than 6 characters, including number, lowercase letter, uppercase letter"
             />

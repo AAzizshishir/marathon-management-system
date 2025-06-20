@@ -6,7 +6,6 @@ import UseAllMarathonsApi from "../../api/useallMarathonsApi";
 const Marathon = () => {
   const { getAllMarathons } = UseAllMarathonsApi();
   const [allMarathonsData, setAllMarathonsData] = useState([]);
-  console.log(allMarathonsData);
 
   useEffect(() => {
     getAllMarathons().then((data) => {

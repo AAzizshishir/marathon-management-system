@@ -11,7 +11,6 @@ const Card = ({ marathonData }) => {
     createdAt,
   } = marathonData;
   return (
-    // dark:bg-gray-50 dark:text-gray-800
     <div className="rounded-md shadow-md bg-base-100 text-base-content flex flex-col justify-between p-4">
       <img className="object-cover object-center h-72 rounded-lg" src={image} />
       <div className="flex flex-col justify-between flex-1 mt-4">
