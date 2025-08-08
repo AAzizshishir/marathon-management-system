@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router";
+import { NavLink } from "react-router";
 import useAuth from "../../hooks/useAuth";
 
 const Navbar = () => {
@@ -12,7 +12,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar font-secondary bg-neutral text-neutral-content opacity-85 px-2 lg:px-10">
+    <nav className="navbar font-secondary bg-neutral text-neutral-content opacity-85 px-2 lg:px-10 sticky top-0 z-10">
       <div className="flex-1">
         <h1 className="text-2xl lg:text-4xl text-primary">
           Marathon Management System
