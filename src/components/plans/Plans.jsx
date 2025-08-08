@@ -3,7 +3,7 @@ import { FaCheck } from "react-icons/fa";
 
 const Plans = () => {
   return (
-    <div className="container mx-auto my-20 p-4">
+    <div className="my-20 p-4 lg:px-10">
       <h1 className="text-5xl font-bold lg:text-6xl lg:font-extrabold lg:w-[700px] md:mb-4">
         Get More From Every Run With{" "}
         <span className="text-primary">Our Plans.</span>

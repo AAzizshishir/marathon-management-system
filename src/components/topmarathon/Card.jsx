@@ -8,14 +8,13 @@ const Card = ({ marathonData }) => {
     startRegistrationDate,
     endRegistrationDate,
     _id,
-    createdAt,
   } = marathonData;
   return (
     <div className="rounded-md shadow-md bg-base-100 text-base-content flex flex-col justify-between p-4">
-      <img className="object-cover object-center h-72 rounded-lg" src={image} />
+      <img className="object-cover object-center h-56 rounded-lg" src={image} />
       <div className="flex flex-col justify-between flex-1 mt-4">
         <div className="flex flex-col justify-between flex-1">
-          <h2 className="text-3xl font-semibold tracking-wide my-1.5">
+          <h2 className="text-2xl font-semibold tracking-wide my-1.5">
             {title}
           </h2>
           <p className="dark:text-gray-800">
@@ -28,10 +27,6 @@ const Card = ({ marathonData }) => {
               {startRegistrationDate} to {endRegistrationDate}
             </p>
           </div>
-          <p className="mb-3">
-            <span className="text-lg font-medium">Created At: </span>
-            {createdAt}
-          </p>
           <Link to={`/marathonDetails/${_id}`}>
             <button className="btn font-secondary w-full p-3 font-normal text-xl tracking-wider bg-primary text-primary-content">
               View Details

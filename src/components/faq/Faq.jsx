@@ -1,6 +1,6 @@
 const Faq = () => {
   return (
-    <div className="container mx-auto my-20 p-4">
+    <div className="my-20 p-4 lg:px-10">
       <section className="bg-base-100 text-base-content shadow-lg rounded-lg">
         <div className="flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
           <h2 className="text-5xl font-semibold sm:text-4xl mb-4">
