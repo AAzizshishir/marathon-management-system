@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { motion } from "motion/react";
 
 const Card = ({ marathonData }) => {
   const {
@@ -10,7 +11,10 @@ const Card = ({ marathonData }) => {
     _id,
   } = marathonData;
   return (
-    <div className="rounded-md shadow-md bg-base-100 text-base-content flex flex-col justify-between p-4">
+    <motion.div
+      whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+      className="rounded-md shadow-md bg-base-100 text-base-content flex flex-col justify-between p-4"
+    >
       <img className="object-cover object-center h-48 rounded-lg" src={image} />
       <div className="flex flex-col justify-between flex-1 mt-4">
         <div className="flex flex-col justify-between flex-1">
@@ -34,7 +38,7 @@ const Card = ({ marathonData }) => {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

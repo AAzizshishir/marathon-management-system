@@ -3,11 +3,11 @@ import SectionTitle from "../sectionTitle/SectionTitle";
 const Faq = () => {
   return (
     <div className="my-20 p-4 lg:px-10">
+      <SectionTitle>Frequently Asked Questions</SectionTitle>
       <section className="bg-base-100 text-base-content shadow-lg rounded-lg">
         <div className="flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
-          <SectionTitle>Frequently Asked Questions</SectionTitle>
           <div className="space-y-4">
-            <details className="w-full border rounded-lg">
+            <details className="w-full border border-gray-300 rounded-lg">
               <summary className="px-4 py-6 focus:outline-none focus-visible:dark:ring-violet-600">
                 What is the minimum age to participate in a marathon?
               </summary>
@@ -17,7 +17,7 @@ const Faq = () => {
                 or 10K) may allow younger runners with parental consent.{" "}
               </p>
             </details>
-            <details className="w-full border rounded-lg">
+            <details className="w-full border border-gray-300 rounded-lg">
               <summary className="px-4 py-6 focus:outline-none focus-visible:dark:ring-violet-600">
                 How should I prepare for my first marathon?
               </summary>
@@ -29,7 +29,7 @@ const Faq = () => {
                 on race day.{" "}
               </p>
             </details>
-            <details className="w-full border rounded-lg">
+            <details className="w-full border border-gray-300 rounded-lg">
               <summary className="px-4 py-6 focus:outline-none focus-visible:dark:ring-violet-600">
                 What should I bring on marathon day?
               </summary>
