@@ -11,7 +11,7 @@ const Card = ({ marathonData }) => {
   } = marathonData;
   return (
     <div className="rounded-md shadow-md bg-base-100 text-base-content flex flex-col justify-between p-4">
-      <img className="object-cover object-center h-56 rounded-lg" src={image} />
+      <img className="object-cover object-center h-48 rounded-lg" src={image} />
       <div className="flex flex-col justify-between flex-1 mt-4">
         <div className="flex flex-col justify-between flex-1">
           <h2 className="text-2xl font-semibold tracking-wide my-1.5">

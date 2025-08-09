@@ -1,13 +1,14 @@
 import { GrSecure } from "react-icons/gr";
 import { FaCheck } from "react-icons/fa";
+import SectionTitle from "../sectionTitle/SectionTitle";
 
 const Plans = () => {
   return (
     <div className="my-20 p-4 lg:px-10">
-      <h1 className="text-5xl font-bold lg:text-6xl lg:font-extrabold lg:w-[700px] md:mb-4">
-        Get More From Every Run With{" "}
+      <SectionTitle>
+        Get More From Every <br /> Run With
         <span className="text-primary">Our Plans.</span>
-      </h1>
+      </SectionTitle>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Card 1 */}
         <div className="bg-base-100 text-base-content shadow-lg p-5 rounded-md">

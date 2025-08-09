@@ -1,11 +1,11 @@
+import SectionTitle from "../sectionTitle/SectionTitle";
+
 const Faq = () => {
   return (
     <div className="my-20 p-4 lg:px-10">
       <section className="bg-base-100 text-base-content shadow-lg rounded-lg">
         <div className="flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
-          <h2 className="text-5xl font-semibold sm:text-4xl mb-4">
-            Frequently Asked Questions
-          </h2>
+          <SectionTitle>Frequently Asked Questions</SectionTitle>
           <div className="space-y-4">
             <details className="w-full border rounded-lg">
               <summary className="px-4 py-6 focus:outline-none focus-visible:dark:ring-violet-600">

@@ -6,6 +6,7 @@ import UpcomingMarathons from "../../components/upcomingMarathon/UpcomingMaratho
 import Plans from "../../components/plans/Plans";
 import Faq from "../../components/faq/Faq";
 import TopMarathons from "../../components/topmarathon/TopMarathons";
+import AboutPlatform from "../../components/aboutPlatform/AboutPlatform";
 
 const marathonDataPromise = fetch(
   "https://marathon-management-system-server-ten.vercel.app/marathons"
@@ -16,6 +17,7 @@ const UpcomingMarathonsPromise = fetch(
 ).then((res) => res.json());
 
 const Home = () => {
+  window.scrollTo(0, 0);
   return (
     <div>
       <Helmet>
@@ -24,6 +26,7 @@ const Home = () => {
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <Banner></Banner>
+      <AboutPlatform />
       <Suspense fallback={<Loader></Loader>}>
         <TopMarathons marathonDataPromise={marathonDataPromise}></TopMarathons>
       </Suspense>

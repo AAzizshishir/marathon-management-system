@@ -27,6 +27,8 @@ const MarathonDetails = () => {
     navigate(`/marathonRegistration/${id}`);
   };
 
+  window.scrollTo(0, 0);
+
   return (
     <div className="container mx-auto my-10">
       <Helmet>

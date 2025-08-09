@@ -40,11 +40,7 @@ const routes = createBrowserRouter([
           fetch(
             `https://marathon-management-system-server-ten.vercel.app/allMarathons/${params.id}`
           ),
-        element: (
-          <PrivateRoutes>
-            <MarathonDetails></MarathonDetails>
-          </PrivateRoutes>
-        ),
+        element: <MarathonDetails></MarathonDetails>,
       },
       {
         path: "marathonRegistration/:id",

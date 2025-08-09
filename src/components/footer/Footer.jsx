@@ -24,10 +24,7 @@ const Footer = () => {
           >
             <FaYoutube />
           </Link>
-          <Link
-            to={"https://www.linkedin.com/in/abdul-aziz-91a755355/"}
-            target="_blank"
-          >
+          <Link to={"https://www.linkedin.com/in/aashishir/"} target="_blank">
             <FaLinkedin />
           </Link>
         </div>

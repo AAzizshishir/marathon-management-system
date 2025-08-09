@@ -14,12 +14,12 @@ const Marathon = () => {
   }, []);
 
   return (
-    <div className="my-10 w-11/12 mx-auto">
+    <div className="my-10 px-4 lg:px-10 min-h-screen">
       <Helmet>
-        <title>Marathon</title>
+        <title>All Marathon</title>
       </Helmet>
       <h1 className="text-6xl font-bold text-center">All Marathons</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:grid-cols-4">
         {allMarathonsData.map((marathonData) => (
           <Card key={marathonData._id} marathonData={marathonData}></Card>
         ))}

@@ -8,7 +8,7 @@ const UpcomingMarathonCard = ({ upcomingData }) => {
     <div className=" bg-black opacity-85 text-white shadow-sm rounded-md">
       <figure>
         <img
-          className="object-cover object-center h-52 rounded-t-md"
+          className="object-cover object-center h-52 rounded-t-md w-full"
           src={image}
         />
       </figure>
