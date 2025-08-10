@@ -17,14 +17,7 @@ const AboutPlatform = () => {
             platform.
           </p>
 
-          <p className="text-base text-base-content mb-6">
-            Whether you’re an <strong>organizer</strong> looking to manage
-            hundreds of participants or a <strong>runner</strong> aiming for
-            your next personal best, our platform ensures a smooth, transparent,
-            and engaging experience.
-          </p>
-
-          <ul className="list-disc list-inside space-y-2 text-base">
+          <ul className="list-disc list-inside space-y-2 mb-4 text-base">
             <li>
               <strong>Easy Registration:</strong> Sign up online in just a few
               clicks.
@@ -33,23 +26,8 @@ const AboutPlatform = () => {
               <strong>Live Race Tracking:</strong> Real-time participant
               progress updates.
             </li>
-            <li>
-              <strong>Organizer Dashboard:</strong> Manage participants, routes,
-              and logistics.
-            </li>
-            <li>
-              <strong>Community Building:</strong> Connect runners, volunteers,
-              and sponsors in one hub.
-            </li>
           </ul>
 
-          <p className="mt-6 text-base text-base-content mb-4">
-            Our mission is simple:{" "}
-            <span className="font-semibold">
-              Make marathons more organized, accessible, and enjoyable for
-              everyone involved.
-            </span>
-          </p>
           <Link
             to="/about_us"
             className="inline-block bg-primary hover:primary text-black px-5 py-2 rounded-lg shadow transition duration-300"

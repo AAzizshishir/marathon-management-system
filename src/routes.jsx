@@ -14,6 +14,7 @@ import PrivateRoutes from "./privateRoutes/PrivateRoutes";
 import Loader from "./components/loader/Loader";
 import MarathonRegistration from "./pages/marathonRegistration/MarathonRegistration";
 import AboutUs from "./pages/aboutUs/AboutUs";
+import ContactUs from "./pages/contactUs/ContactUs";
 
 const routes = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const routes = createBrowserRouter([
       {
         path: "about_us",
         element: <AboutUs />,
+      },
+      {
+        path: "contact_us",
+        element: <ContactUs />,
       },
       {
         path: "marathon",

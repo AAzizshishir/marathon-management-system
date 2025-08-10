@@ -36,6 +36,14 @@ const Navbar = () => {
           </li>
           <li className="hover:text-primary">
             <NavLink
+              to={"/contact_us"}
+              className={({ isActive }) => (isActive ? "text-primary" : "")}
+            >
+              Contact Us
+            </NavLink>
+          </li>
+          <li className="hover:text-primary">
+            <NavLink
               to={"/marathon"}
               className={({ isActive }) => (isActive ? "text-primary" : "")}
             >

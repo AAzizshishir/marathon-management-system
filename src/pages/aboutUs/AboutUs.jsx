@@ -112,7 +112,7 @@ const AboutUs = () => {
 
       {/* Why Us */}
       <section className="py-16" initial="hidden" whileInView="visible">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="px-4 md:px-10">
           {/* Title */}
           <div className="text-center mb-12">
             <SectionTitle className={"grid place-items-center"}>
@@ -211,6 +211,19 @@ const AboutUs = () => {
               ))}
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Team */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4 text-center max-w-xl">
+          <SectionTitle>
+            <h2 className="text-center">Our Team</h2>
+          </SectionTitle>
+          <p className="text-gray-600 text-lg">
+            Founded by <span className="font-semibold">Shishir</span>, a
+            passionate web developer and marathon enthusiast.
+          </p>
         </div>
       </section>
     </div>

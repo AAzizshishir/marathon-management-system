@@ -7,7 +7,7 @@ const Marathon = () => {
   const allMarathons = useLoaderData();
 
   return (
-    <div className="my-10 px-4 lg:px-10 min-h-screen">
+    <div className="my-10 px-4 lg:px-10">
       <Helmet>
         <title>All Marathon</title>
       </Helmet>
