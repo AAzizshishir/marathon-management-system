@@ -7,7 +7,7 @@ const Plans = () => {
     <div className="my-20 p-4 lg:px-10">
       <SectionTitle>
         Get More From Every <br /> Run With
-        <span className="text-primary">Our Plans.</span>
+        <span className="text-primary"> Our Plans.</span>
       </SectionTitle>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Card 1 */}

@@ -14,9 +14,7 @@ const Navbar = () => {
   return (
     <nav className="navbar font-secondary bg-neutral text-neutral-content opacity-85 px-2 lg:px-10 sticky top-0 z-10">
       <div className="flex-1">
-        <h1 className="text-2xl lg:text-4xl text-primary">
-          Marathon Management System
-        </h1>
+        <h1 className="text-2xl lg:text-4xl text-primary">MilesMatter</h1>
       </div>
       <div className="flex items-center">
         <ul className="menu menu-horizontal px-1 tracking-wider md:space-x-1.5 text-lg flex flex-col md:flex-row">
@@ -26,6 +24,14 @@ const Navbar = () => {
               className={({ isActive }) => (isActive ? "text-primary" : "")}
             >
               Home
+            </NavLink>
+          </li>
+          <li className="hover:text-primary">
+            <NavLink
+              to={"/about_us"}
+              className={({ isActive }) => (isActive ? "text-primary" : "")}
+            >
+              About Us
             </NavLink>
           </li>
           <li className="hover:text-primary">
