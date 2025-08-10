@@ -35,6 +35,8 @@ const AboutUs = () => {
       desc: "A proven track record of successful events.",
     },
   ];
+
+  window.scrollTo(0, 0);
   return (
     <div className="px-4 lg:px-10 py-4">
       {/* Page Title */}

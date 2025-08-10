@@ -32,11 +32,11 @@ const routes = createBrowserRouter([
       {
         path: "marathon",
         hydrateFallbackElement: <Loader></Loader>,
-        element: (
-          <PrivateRoutes>
-            <Marathon></Marathon>
-          </PrivateRoutes>
-        ),
+        element: <Marathon></Marathon>,
+        loader: () =>
+          fetch(
+            "https://marathon-management-system-server-ten.vercel.app/allMarathons"
+          ),
       },
       {
         path: "/marathonDetails/:id",

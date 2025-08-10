@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import SectionTitle from "../sectionTitle/SectionTitle";
 
 const AboutPlatform = () => {
@@ -42,13 +43,19 @@ const AboutPlatform = () => {
             </li>
           </ul>
 
-          <p className="mt-6 text-base text-base-content">
+          <p className="mt-6 text-base text-base-content mb-4">
             Our mission is simple:{" "}
             <span className="font-semibold">
               Make marathons more organized, accessible, and enjoyable for
               everyone involved.
             </span>
           </p>
+          <Link
+            to="/about_us"
+            className="inline-block bg-primary hover:primary text-black px-5 py-2 rounded-lg shadow transition duration-300"
+          >
+            Read More →
+          </Link>
         </div>
 
         {/* Image Section */}
