@@ -46,7 +46,7 @@ const ContactUs = () => {
   return (
     <section className="max-w-4xl mx-auto px-6 py-12">
       <SectionTitle>
-        <h1 className="text-center">Contact Us</h1>
+        <span className="text-center block">Contact Us</span>
       </SectionTitle>
 
       <div className="flex flex-col md:flex-row gap-12">

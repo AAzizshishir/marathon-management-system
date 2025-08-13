@@ -1,8 +1,11 @@
-import { NavLink } from "react-router";
 import useAuth from "../../hooks/useAuth";
+import { FaSignOutAlt, FaBars } from "react-icons/fa";
+import { Link } from "react-router";
+import Links from "../Links/Links";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
+
   const handleLogout = () => {
     logout()
       .then(() => {})
@@ -12,65 +15,29 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar font-secondary bg-neutral text-neutral-content opacity-85 px-2 lg:px-10 sticky top-0 z-10">
-      <div className="flex-1">
-        <h1 className="text-2xl lg:text-4xl text-primary">MilesMatter</h1>
+    <nav className="navbar bg-black sticky top-0 left-0 z-50 shadow-sm">
+      <div className="navbar-start">
+        <div className="dropdown">
+          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <FaBars />
+          </div>
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content bg-gray-800 rounded-box z-1 mt-3 w-52 p-2 shadow text-white"
+          >
+            <Links />
+          </ul>
+        </div>
+        <Link to={"/"} className="text-2xl lg:text-4xl text-primary">
+          MilesMatter
+        </Link>
       </div>
-      <div className="flex items-center">
-        <ul className="menu menu-horizontal px-1 tracking-wider md:space-x-1.5 text-lg flex flex-col md:flex-row">
-          <li className="hover:text-primary">
-            <NavLink
-              to={"/"}
-              className={({ isActive }) => (isActive ? "text-primary" : "")}
-            >
-              Home
-            </NavLink>
-          </li>
-          <li className="hover:text-primary">
-            <NavLink
-              to={"/about_us"}
-              className={({ isActive }) => (isActive ? "text-primary" : "")}
-            >
-              About Us
-            </NavLink>
-          </li>
-          <li className="hover:text-primary">
-            <NavLink
-              to={"/contact_us"}
-              className={({ isActive }) => (isActive ? "text-primary" : "")}
-            >
-              Contact Us
-            </NavLink>
-          </li>
-          <li className="hover:text-primary">
-            <NavLink
-              to={"/marathon"}
-              className={({ isActive }) => (isActive ? "text-primary" : "")}
-            >
-              Marathon
-            </NavLink>
-          </li>
-          {user ? (
-            <li className="hover:text-primary">
-              <NavLink
-                to={"/dashboard"}
-                className={({ isActive }) => (isActive ? "text-primary" : "")}
-              >
-                Dashboard
-              </NavLink>
-            </li>
-          ) : (
-            <>
-              <button className="btn bg-primary text-primary-content text-xl tracking-wider font-normal mb-1">
-                <NavLink to={"/login"}>Login</NavLink>
-              </button>
-              <button className="btn bg-primary text-primary-content text-xl tracking-wider font-normal">
-                <NavLink to={"/register"}>Register</NavLink>
-              </button>
-            </>
-          )}
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal flex flex-col lg:flex-row gap-2 text-lg font-medium text-white">
+          <Links />
         </ul>
-
+      </div>
+      <div className="navbar-end">
         {user && (
           <div className="flex items-center gap-2">
             <img
@@ -81,9 +48,9 @@ const Navbar = () => {
             />
             <button
               onClick={handleLogout}
-              className="btn bg-primary text-black text-xl font-normal tracking-wider border-none outline-0 "
+              className="btn bg-primary text-black text-lg"
             >
-              Logout
+              <FaSignOutAlt className="inline mr-1" /> Logout
             </button>
           </div>
         )}
