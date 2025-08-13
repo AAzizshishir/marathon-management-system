@@ -58,8 +58,8 @@ const Banner = () => {
               <p className="text-lg md:text-2xl mb-6 drop-shadow-md">
                 {slide.description}
               </p>
-              <Link to={""}>
-                <button className="bg-white text-black font-semibold px-6 py-3 rounded-full hover:bg-yellow-400 transition duration-300">
+              <Link to={"/marathon"}>
+                <button className="bg-white cursor-pointer text-black font-semibold px-6 py-3 rounded-full hover:bg-primary transition duration-300">
                   🏃‍♂️ Join the Race
                 </button>
               </Link>

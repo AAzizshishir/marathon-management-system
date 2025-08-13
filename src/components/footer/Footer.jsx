@@ -1,6 +1,5 @@
 import { Link } from "react-router";
-import { FaFacebook } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
@@ -18,11 +17,8 @@ const Footer = () => {
           >
             <FaFacebook />
           </Link>
-          <Link
-            to={"https://www.youtube.com/@AbdulAzizShishir"}
-            target="_blank"
-          >
-            <FaYoutube />
+          <Link to={"https://github.com/AAzizshishir"} target="_blank">
+            <FaGithub />
           </Link>
           <Link to={"https://www.linkedin.com/in/aashishir/"} target="_blank">
             <FaLinkedin />
